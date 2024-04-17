@@ -5,6 +5,5 @@ export const store = reactive ({
     searchContent: '',
     moviesList: [],
     moviesApiUri: 'https://api.themoviedb.org/3/search/movie',
-    movieImage:'https://image.tmdb.org/t/p/w342/',
-    endMovieImage: '/images'
+    movieImage:'https://image.tmdb.org/t/p/w342/'
 })
