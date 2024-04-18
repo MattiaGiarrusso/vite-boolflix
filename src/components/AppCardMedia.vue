@@ -23,7 +23,7 @@
 <template>
 
     <div class="card ms-card my-2 ms-border" style="width: calc(100% / 4);">
-        <div class="card-image bg-dark">
+        <div class="ms-card-image bg-dark">
             <img :src="store.movieImage + selectMedia.poster_path" :alt="selectMedia.title">
         </div>
         <div class="card-body bg-dark text-light d-flex flex-column">
@@ -49,9 +49,15 @@
     font-family: "Instrument Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
-    
+    font-variation-settings: "wdth" 100;    
 }
+
+.ms-card-image {
+    height: 50%;
+    img {
+        height: 100%;
+    }
+} 
 
 .ms-border {
     border-radius: 0px;

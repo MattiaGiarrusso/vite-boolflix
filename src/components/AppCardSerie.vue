@@ -23,7 +23,7 @@
 <template>
 
     <div class="card ms-card my-2 ms-border" style="width: calc(100% / 4);">
-        <div class="card-image bg-dark">
+        <div class="ms-card-image bg-dark">
             <img :src="store.movieImage + selectMedia.poster_path" :alt="selectMedia.title">
         </div>
         <div class="card-body bg-dark text-light d-flex flex-column">
@@ -58,9 +58,13 @@
     border: 1px solid black;
 }
 
-.card-image {
-    border:  1px solid black;
-}
+.ms-card-image {
+    height: 50%;
+    img {
+        height: 100%;
+    }
+} 
+
 
 .ms-flag {
     width: 20px;    
