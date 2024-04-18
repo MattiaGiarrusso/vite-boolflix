@@ -2,14 +2,12 @@
 import axios from 'axios';
 import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue'; 
-import AppSearch from './components/AppSearch.vue';
 import AppMain from './components/AppMain.vue';
 import AppCardMovie from './components/AppCardMovie.vue';
 
 export default {
   components: {
       AppHeader,
-      AppSearch,
       AppMain,
       AppCardMovie
   },
@@ -44,10 +42,9 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader @search="searchMovie"></AppHeader>
 
   <main>
-    <AppSearch @search="searchMovie"></AppSearch>
     <AppMain></AppMain>
   </main>  
 </template>
