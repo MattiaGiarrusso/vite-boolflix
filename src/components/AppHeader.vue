@@ -27,7 +27,7 @@ export default {
         
 
         <div class="input-group d-flex align-items-center ms-input-group">
-            <input type="text" class="form-control ms-input-text" placeholder="Cerca un film o una serie TV..." v-model="store.searchContent" @keyup.enter="$emit('search')">
+            <input type="text" class="form-control" placeholder="Cerca un film o una serie TV..." v-model="store.searchContent" @keyup.enter="$emit('search')">
             <button class="btn ms-btn-search" type="button" @click="$emit('search')">Cerca</button>
         </div>
 
@@ -55,10 +55,10 @@ header {
     }
 
 
-    .ms-input-text {
-        background-color: #2D262D;
-        color: white;
-    }
+    // .ms-input-text {
+    //     background-color: #2D262D;
+    //     color: white;
+    // }
 
     .ms-input-group {
         width: 40%;
