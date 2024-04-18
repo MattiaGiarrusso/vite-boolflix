@@ -23,7 +23,7 @@ export default {
     <section>
         <div class="ms-container">
 
-            <div class="container d-flex flex-wrap ms-padding">
+            <div class="d-flex flex-wrap ms-padding">
                 <AppCardMedia v-for="movie in store.moviesList" :key="movie.id" :selectMedia="movie"></AppCardMedia>
                 <AppCardSerie v-for="serie in store.seriesList" :key="serie.id" :selectMedia="serie"></AppCardSerie>
             </div>

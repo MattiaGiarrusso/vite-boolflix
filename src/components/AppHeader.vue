@@ -45,7 +45,12 @@ header {
     color: red;
     position: fixed;
     z-index: 10;
-    opacity: 0.95;
+    opacity: 0.9;
+    font-size: 12px;
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 
     .logo {        
         height: 60px;
@@ -66,7 +71,6 @@ header {
                 outline: none !important;
                 border: 1px solid red;
                 box-shadow: none;
-                // box-shadow: 0 0 10px #719ECE;
             }
             
             &::placeholder {

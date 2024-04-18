@@ -27,10 +27,13 @@
             <img :src="store.movieImage + selectMedia.poster_path" :alt="selectMedia.title">
         </div>
         <div class="card-body bg-dark text-light d-flex flex-column">
-            <h5 class="card-title"><strong>{{ selectMedia.title }}</strong></h5>
-            <span class="card-text"><strong>Titolo originale: </strong>{{ selectMedia.original_title }}</span>
-            <span class="card-text"><strong>Voto: </strong>{{ selectMedia.vote_average }}</span>
-            <span class="card-text"><strong>Lingua: </strong><img class="ms-flag" :src="getFlagUrl(flag)" alt=""></span>
+            <h5 class="card-title pb-1"><strong>{{ selectMedia.title }}</strong></h5>
+            <span class="card-text pb-1"><strong>Titolo originale: </strong>{{ selectMedia.original_title }}</span>
+            <span class="card-text pb-1">
+                <strong>Voto:</strong>
+                <i v-for="n in 5" :key="n" class="fa-star" :class="{ 'fa-solid': n <= Math.round(selectMedia.vote_average / 2), 'fa-regular': n > Math.round(selectMedia.vote_average / 2) }"></i>
+            </span>
+            <span class="card-text pb-1"><strong>Lingua: </strong><img class="ms-flag" :src="getFlagUrl(flag)" alt=""></span>
             <p class="card-text"><strong>Descrizione: </strong>{{ selectMedia.overview }}</p>
         </div>
     </div>
@@ -55,16 +58,12 @@
     border: 1px solid black;
 }
 
-.card-image {
-    border:  1px solid black;
-    height: 40%;
-    img {
-        height: 100%;
-    }
-}
-
 .ms-flag {
     width: 20px;    
+}
+
+.fa-star {
+    color: white
 }
 
 </style>
