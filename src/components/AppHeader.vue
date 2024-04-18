@@ -27,7 +27,7 @@ export default {
         
 
         <div class="input-group d-flex align-items-center ms-input-group">
-            <input type="text" class="form-control" placeholder="Cerca un film o una serie TV..." v-model="store.searchContent" @keyup.enter="$emit('search')">
+            <input type="text" class="form-control bg-dark text-light" placeholder="Cerca un film o una serie TV..." v-model="store.searchContent" @keyup.enter="$emit('search')">
             <button class="btn ms-btn-search" type="button" @click="$emit('search')">Cerca</button>
         </div>
 
@@ -45,6 +45,7 @@ header {
     color: red;
     position: fixed;
     z-index: 10;
+    opacity: 0.95;
 
     .logo {        
         height: 60px;
@@ -55,18 +56,31 @@ header {
     }
 
 
-    // .ms-input-text {
-    //     background-color: #2D262D;
-    //     color: white;
-    // }
 
     .ms-input-group {
         width: 40%;
+        
+        input {
+
+            &:focus {
+                outline: none !important;
+                border: 1px solid red;
+                box-shadow: none;
+                // box-shadow: 0 0 10px #719ECE;
+            }
+            
+            &::placeholder {
+              color: gray;
+              opacity: 1;
+            }
+        }
+        
 
         .ms-btn-search {
-            background-color: red;
+            background-color: #DEE2E6;
             &:hover {
-                background-color: darkred;
+                background-color: red;
+                color: #DEE2E6;
             }
         }
     }
