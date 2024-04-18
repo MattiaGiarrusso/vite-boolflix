@@ -1,9 +1,45 @@
+/* ----------------
+      RESET
+-----------------*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #2D262D;
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
 img {
     width: 100%;
 }
+
+
+/* ----------------
+  CUSTOM SCROLLBAR
+-----------------*/
+
+/* width */
+body::-webkit-scrollbar {
+    width: auto;
+  }
+  
+  /* Track */
+body::-webkit-scrollbar-track {
+    background-color: #000000;
+  }
+  
+  /* Handle */
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 6px;
+  }
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: red;
+  }

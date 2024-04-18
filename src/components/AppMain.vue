@@ -1,12 +1,14 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js';
-import AppCardMovie from './AppCardMovie.vue';
+import AppCardMedia from './AppCardMedia.vue';
+import AppCardSerie from './AppCardSerie.vue';
 
 export default {
     name: 'AppMain',
     components: {
-        AppCardMovie,
+        AppCardMedia,
+        AppCardSerie
     },
     data() {
         return {
@@ -22,7 +24,8 @@ export default {
         <div class="ms-container">
 
             <div class="container d-flex flex-wrap ms-padding">
-                <AppCardMovie v-for="movie in store.moviesList" :key="movie.id" :selectMovie="movie"></AppCardMovie>
+                <AppCardMedia v-for="movie in store.moviesList" :key="movie.id" :selectMedia="movie"></AppCardMedia>
+                <AppCardSerie v-for="serie in store.seriesList" :key="serie.id" :selectMedia="serie"></AppCardSerie>
             </div>
 
         </div>
@@ -41,7 +44,7 @@ section {
     }
 
     .ms-padding {
-        padding: 90px 0px;
+        padding: 70px 0px;
     }
 
 }

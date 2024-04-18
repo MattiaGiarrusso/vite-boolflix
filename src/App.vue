@@ -3,13 +3,15 @@ import axios from 'axios';
 import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue'; 
 import AppMain from './components/AppMain.vue';
-import AppCardMovie from './components/AppCardMovie.vue';
+import AppCardMedia from './components/AppCardMedia.vue';
+import AppCardSerie from './components/AppCardSerie.vue';
 
 export default {
   components: {
       AppHeader,
       AppMain,
-      AppCardMovie
+      AppCardMedia,
+      AppCardSerie
   },
   data () {
       return {
@@ -17,7 +19,7 @@ export default {
       };
     },
     methods: {
-      searchMovie() {
+      searchMedia() {
 
         const queryParams = {
            api_key: store.apiKey,
@@ -26,23 +28,31 @@ export default {
         };
 
         store.moviesList = [];
+        store.seriesList = [];
 
-        let urlCompleteMovies = store.moviesApiUri;
+        let urlCompleteMovies = store.moviesApiUrl;
 
         axios.get(urlCompleteMovies, {params: queryParams})
           .then ((response) => {            
             store.moviesList = response.data.results;
           })
+
+        let urlCompleteSeries = store.seriesApiUrl;
+
+        axios.get(urlCompleteSeries, {params: queryParams})
+          .then ((response) => {            
+            store.seriesList = response.data.results;
+          })          
       },
       mounted() {
-        this.searchMovie();
+        this.searchMedia();
       }    
     }
 }
 </script>
 
 <template>
-  <AppHeader @search="searchMovie"></AppHeader>
+  <AppHeader @search="searchMedia"></AppHeader>
 
   <main>
     <AppMain></AppMain>
@@ -52,5 +62,10 @@ export default {
 <style lang="scss">
 
 @use './style/generic';
+
+main {
+  height: 100vh;
+  background-color: #2D262D;
+}
 
 </style>

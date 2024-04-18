@@ -82,6 +82,10 @@ header {
                 background-color: red;
                 color: #DEE2E6;
             }
+            &:active {
+                background-color: red;
+                color: #DEE2E6;
+            }
         }
     }
 
