@@ -28,7 +28,7 @@ export default {
 
         <div class="input-group d-flex align-items-center ms-input-group">
             <input type="text" class="form-control bg-dark text-light" placeholder="Cerca un film o una serie TV..." v-model="store.searchContent" @keyup.enter="$emit('search')">
-            <button class="btn ms-btn-search" type="button" @click="$emit('search')">Cerca</button>
+            <button class="btn ms-btn-search" type="button" @click="$emit('search')"><i class="fa-search fa-solid"></i></button>
         </div>
 
     </header>
@@ -53,19 +53,17 @@ header {
     font-variation-settings: "wdth" 100;
 
     .logo {        
-        height: 60px;
-
         img {
-            height: 100%;
+           height: 40px;
         }
     }
-
-
 
     .ms-input-group {
         width: 40%;
         
         input {
+            height: 30px;
+            border-color: #2D262D;
 
             &:focus {
                 outline: none !important;
@@ -77,11 +75,13 @@ header {
               color: gray;
               opacity: 1;
             }
-        }
-        
+        }        
 
         .ms-btn-search {
-            background-color: #DEE2E6;
+            padding: 3px 16px;
+            border: none;
+            color: gray;
+            background-color: #2D262D;
             &:hover {
                 background-color: red;
                 color: #DEE2E6;

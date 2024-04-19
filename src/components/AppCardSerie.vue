@@ -65,7 +65,6 @@
     }
 } 
 
-
 .ms-flag {
     width: 20px;    
 }

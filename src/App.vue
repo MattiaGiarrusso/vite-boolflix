@@ -75,7 +75,7 @@ export default {
 
 main {
   height: 100vh;
-  background-color: #2D262D;
+  background-color: #150F11;
 }
 
 </style>

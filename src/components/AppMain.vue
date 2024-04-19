@@ -47,7 +47,7 @@ export default {
 @use '../style/generic';
 
 section {
-    background-color:#2D262D;
+    background-color: #150F11;
     position: relative;
 
     .banner-nofound {
@@ -55,7 +55,7 @@ section {
         position: absolute;
         top: 25%;
         left: 25%;
-        color: red;
+        color: grey;
 
         img {
             width: 40%;
@@ -67,7 +67,7 @@ section {
     }
 
     .ms-padding {
-        padding: 70px 0px;
+        padding: 60px 0px;
     }
 
 }
