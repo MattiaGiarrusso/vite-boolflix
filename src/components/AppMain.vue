@@ -28,7 +28,7 @@ export default {
 <template>
     <section>
         <div class="ms-container">
-            <div v-if="store.nofoundMessage" class="banner-nofound d-flex flex-column justify-content-center align-items-center">
+            <div v-if="store.nofoundMessage" class="col-6 banner-nofound d-flex flex-column justify-content-center align-items-center">
                 <img :src="getImageUrl(image)" alt="">
                 <h2>{{ store.nofoundMessage }}</h2>
             </div>
@@ -49,9 +49,9 @@ export default {
 section {
     background-color:#2D262D;
     position: relative;
-    height: 100%;
 
     .banner-nofound {
+        margin-top: 100px;
         position: absolute;
         top: 25%;
         left: 25%;
