@@ -12,9 +12,15 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            image: 'no-found.png'
         }
-    }
+    },
+    methods: {
+        getImageUrl(image) {
+            return new URL('../assets/img/' + image, import.meta.url).href;
+            }
+    },
 }
 
 </script>
@@ -22,8 +28,12 @@ export default {
 <template>
     <section>
         <div class="ms-container">
-
-            <div class="d-flex flex-wrap ms-padding">
+            <div v-if="store.nofoundMessage" class="banner-nofound d-flex flex-column justify-content-center align-items-center">
+                <img :src="getImageUrl(image)" alt="">
+                <h2>{{ store.nofoundMessage }}</h2>
+            </div>
+            
+            <div v-else class="d-flex flex-wrap ms-padding">
                 <AppCardMedia v-for="movie in store.moviesList" :key="movie.id" :selectMedia="movie"></AppCardMedia>
                 <AppCardSerie v-for="serie in store.seriesList" :key="serie.id" :selectMedia="serie"></AppCardSerie>
             </div>
@@ -38,6 +48,19 @@ export default {
 
 section {
     background-color:#2D262D;
+    position: relative;
+    height: 100%;
+
+    .banner-nofound {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        color: red;
+
+        img {
+            width: 40%;
+        }
+    }
     
     .ms-container {
         height: 100%;

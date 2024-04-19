@@ -31,7 +31,7 @@
             <span class="card-text pb-1"><strong>Titolo originale: </strong>{{ selectMedia.original_title }}</span>
             <span class="card-text pb-1">
                 <strong>Voto:</strong>
-                <i v-for="n in 5" :key="n" class="fa-star" :class="{ 'fa-solid': n <= Math.round(selectMedia.vote_average / 2), 'fa-regular': n > Math.round(selectMedia.vote_average / 2) }"></i>
+                <i class="fa-star" v-for="n in 5" :key="n" :class="{ 'fa-solid': n <= Math.round(selectMedia.vote_average / 2), 'fa-regular': n > Math.round(selectMedia.vote_average / 2) }"></i>
             </span>
             <span class="card-text pb-1"><strong>Lingua: </strong><img class="ms-flag" :src="getFlagUrl(flag)" alt=""></span>
             <p class="card-text"><strong>Descrizione: </strong>{{ selectMedia.overview }}</p>

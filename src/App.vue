@@ -29,20 +29,30 @@ export default {
 
         store.moviesList = [];
         store.seriesList = [];
+        store.nofoundMessage = '';
 
         let urlCompleteMovies = store.moviesApiUrl;
 
         axios.get(urlCompleteMovies, {params: queryParams})
           .then ((response) => {            
-            store.moviesList = response.data.results;
-          })
+            if (response.data.results.length === 0) {
+              store.nofoundMessage = "Nessun film o serie tv trovata"
+            } else {
+              store.moviesList = response.data.results;
+            }
+          });
 
         let urlCompleteSeries = store.seriesApiUrl;
 
         axios.get(urlCompleteSeries, {params: queryParams})
           .then ((response) => {            
-            store.seriesList = response.data.results;
-          })          
+            if (response.data.results.length === 0) {
+              store.nofoundMessage = "Nessun film o serie tv trovata"
+            } else {
+              store.seriesList = response.data.results;
+            }
+          })
+          
       },
       mounted() {
         this.searchMedia();
